@@ -1,0 +1,60 @@
+
+ <fieldset   style="padding: 0% ;margin-left: 150px;margin-right:150px;background-color:rgba(11, 90, 111, 0.1); "  >
+                  
+				<div class="row">
+					<div class="col-md-12">
+						<div class="widget">
+							
+							<div class="widget-content">
+									
+									
+				<div class="widget-content">
+								<div class="table-responsive"style=" box-shadow: 0px 0px 50px rgba(0,0,0,.8);" >
+									<table data-sortable class="table table-hover table-striped">
+										<thead>
+											<tr>
+												<th>date</th>
+												<th>etat</th>
+									
+												 
+												 
+											</tr>
+										</thead>
+										
+										<tbody>
+                                                                                      <?php foreach($seance as $sc){ ?>
+                                                                                  
+                                                                                
+									<tr>
+											                                   
+                                                                             <td>  <?= $sc->dateseance?>  </td>     
+                                                                       
+                                                                     
+										 								
+										 <td>							
+                                                                             <?php if(($sc->etat)=='activer'){?>
+                                                                                    
+                                                                                     <a href="editseance?id=<?= $sc->id ?>&id_session=<?= $sc->id_session?>" style="text-decoration:none" >   <span class="label label-success" ><?=  $sc->etat ?> </span>	</a>				 
+                                                                             <?php }     if(($sc->etat)=='desactiver')           {
+                                                                                 ?>	<a href="editseances?id=<?= $sc->id?>&id_session=<?=$sc->id_session?>" style="text-decoration:none" > <span class="label label-danger" ><?= $sc->etat?> </span> <?php } ?>  </a>  </td>
+                                                                                    						 
+                                                                 
+                                                                               
+                                                                               
+                                                    	 	
+											</tr>
+                                                                                      <?php } ?>
+										</tbody>
+									</table>
+								</div>
+							</div>
+									
+								
+							</div>
+						</div>
+					</div>
+						
+				</div>
+     </fieldset>
+	
+			

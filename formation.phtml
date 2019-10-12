@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.1
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Metronic Admin Theme #1 | User Login 4</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="Preview page of Metronic Admin Theme #1 for " name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- END HEAD -->
+
+    <body class=" login">
+        <!-- BEGIN LOGO -->
+        <div class="logo">
+          
+                <!--<img src="<?php echo $this->basePath() ?>/assets/pages/img/" alt="" /> </a>-->
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN LOGIN -->
+        <div class="content">
+            <!-- BEGIN LOGIN FORM -->
+              <div class="row"><div class="col-md-3 "></div>
+                   <div class="col-xs-6 portlets" style="  box-shadow: 0px 0px 50px rgba(0,0,0,.4)"  > 
+                       <form class="login-form" method="post" action="addformation">
+           
+               <h3>  <i class="fa fa-graduation-cap "></i> Ajouter formation </h3>
+               <br><br><br>
+        
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">langage</label>
+                    <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                        <input class="form-control placeholder-no-fix" type="text" id="langage" placeholder="langage" name="langage" /> </div>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">objectif</label>
+                    <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                        <input class="form-control placeholder-no-fix" type="text" id="objectif" placeholder="objectif" name="objectif" /> </div>
+                </div>
+               <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">objectif</label>
+                    <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                        <input class="form-control placeholder-no-fix" type="text" id="prequis" placeholder="prequis" name="prequis" /> </div>
+                </div>
+               
+             
+              
+
+             
+            
+          
+                <div class="form-group">
+                 
+                    <div id="register_tnc_error"> </div>
+                </div> <br> 
+                <div class="form-actions">
+                    <button type="submit" id="register-submit-btn" class="btn green pull-right" > Ajouter </button>
+            <br><br>    </div>
+            </form>  <br></div> <br>    </div><br>
+            <!-- END REGISTRATION FORM -->
+        </div><br><br><br>
+        <!-- END LOGIN -->
+        <!-- BEGIN COPYRIGHT -->
+       
+        <!--[if lt IE 9]>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+       
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <!-- END THEME LAYOUT SCRIPTS -->
+        
+        
+         
+        
+        
+  <?php $this->headScript()
+            ->prependFile($this->basePath('/assets/global/plugins/jquery-validation/js/additional-methods.min.js'))
+            ->prependFile($this->basePath('/assets/pages/scripts/login-4.min.js'))
+          
+            ->prependFile($this->basePath('/assets/pages/scripts/ajout.js'))?>
+
+                <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('/assets/pages/css/login-4.min.css'))
+                       ?>                
+                     
+  
+   

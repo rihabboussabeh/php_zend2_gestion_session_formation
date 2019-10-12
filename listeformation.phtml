@@ -1,0 +1,148 @@
+
+                        <h1 class="page-title"><i class="fa fa-laptop"></i> Liste des formations
+                            
+                        </h1>
+                        <!-- END PAGE TITLE-->
+                        <!-- END PAGE HEADER-->
+                        <div class="profile">
+                            <div class="tabbable-line tabbable-full-width">
+                                <ul class="nav nav-tabs">
+                                   
+                                    <li class="active">
+                                        <a href="#tab_1_3" data-toggle="tab">Liste des sessions disponible </a>
+                                    </li>
+                                   
+                                </ul>
+                                <div class="tab-content">
+                             
+                                    <!--tab_1_2-->
+                                   <div class="tab-pane active" id="tab_1_3">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <ul class="ver-inline-menu tabbable margin-bottom-10">
+                                                    <li class="active">
+                                                        <a data-toggle="tab" href="#tab_1">
+                                                            <i class="fa fa-graduation-cap"></i>Sessions</a>
+                                                        <span class="after"> </span>
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="tab-content">
+                                                    <div id="tab_1" class="tab-pane active">
+                                                        <div id="accordion1" class="panel-group">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title">
+                                                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_1" style="color: #003366;font-size:11px ;font-family:cursive"> Nous mettons à votre disposition une large gamme de formations informatiques pour tous les niveaux, en adaptant les durées, dates et horaires des sessions à vos disponibilités.</a>
+                                                                    </h4>
+                                                                </div>
+                      
+                                                                <div id="accordion1_1" class="panel-collapse collapse in">
+            
+  <?php foreach($tabpropo as $user){  ?>
+<?php if(($user->etat)=='activer'){?>
+                        <div class="row">
+               
+                            <div class="col-md-1">
+                         
+                                <!-- END Portlet PORTLET-->
+                            </div>
+                             <?php // if(! $user->etat) {  ?>
+                            <div class="col-md-10 ">
+                                <!-- BEGIN Portlet PORTLET-->
+                                <div class="portlet box blue-hoki">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-graduation-cap "></i><?= $user->langage ?> </div>
+                                            
+                                            
+                                        <div class="tools">
+                                          
+                                            <a href="javascript:;" class="collapse"> </a>
+                                            <a href="" class="fullscreen"> </a>
+                                        
+                                        </div>
+                                       
+                                        <div class="actions">
+                                           
+                                            <a href="<?php echo $this->basePath() ?>/application/index/inscriptionparticipant" class="btn btn-default btn-sm">
+                                           
+                                                <i class="fa fa-user-plus" ></i> Inscription </a>
+                                               <h6 class="caption" style="font-size:10px">
+                                            (Nombre de places disponibles   <?= $user->nbg ?>)</h6>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div class="scroller" style="height:200px" data-always-visible="1" data-rail-visible="1" data-rail-color="blue" data-handle-color="red">
+                                          
+                                 
+                                            <h4>   <u> objectif   </u>: <?= $user->objectif ?></h4> 
+                                            <h4>  <u>prequis  </u>   :            <?=$user->prequis ?> </h4> 
+                                                <h4>   <u>date debut </u>  :   <?= $user->description ?> </h4> 
+                                                 <h4><u>durée     </u>  :  <?= $user->nbh ?> h </h4> 
+                                                                   
+                                                     <h4><u> prix   </u> : <?= $user->prixs ?> dt </h4>    
+                              
+                                        
+                                        
+                                        
+                                        </div>
+                                </div>
+                                <!-- END Portlet PORTLET-->
+                            </div>
+                          
+                        </div>
+               
+                                
+                                <?php // } ?>
+                <!-- END QUICK SIDEBAR -->
+            </div><?php } ?>
+<?php  } ?>
+                                                          
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end tab-pane-->
+                               
+                                    <!--end tab-pane-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END CONTENT BODY -->
+                </div>
+                <!-- END CONTENT -->
+                <!-- BEGIN QUICK SIDEBAR -->
+           
+                
+                <!-- END QUICK SIDEBAR -->
+            </div>
+            <!-- END CONTAINER -->
+           
+            <!-- END FOOTER -->
+        </div>
+        <!-- BEGIN QUICK NAV -->
+ 
+        <div class="quick-nav-overlay"></div>
+        <!-- END QUICK NAV -->
+        <!--[if lt IE 9]>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+ 
+        <?php $this->headScript()
+            ->prependFile($this->basePath('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js'))
+            ?>
+        
+        

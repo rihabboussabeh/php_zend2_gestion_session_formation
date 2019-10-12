@@ -1,0 +1,32 @@
+
+                    
+                                             
+            
+ 
+                    <?php foreach ($evenement as $val) {?>
+                   
+                    <?php if(($val->etat)==('activer')) {?>                          
+              
+  <div class="portlet-body">
+                                                        <div class="mt-element-list">
+                                                            <div class="mt-list-head list-todo red" style="color:#0B0B61;     box-shadow: 0px 0px 50px rgba(0,0,0,.3);  background-color:#e7edf2;">
+                                                                <div class="list-head-title-container">
+                                                                    <h3 class="list-title"><?= $val->titre?></h3>
+                                                                    <div class="list-head-count">
+                                                                        <div class="list-head-count-item">
+                                                                    
+                                                                        <div class="list-head-count-item">
+                                                                     
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                        
+                                                                          <a href="listeparticipantevenement?id_evenement=<?= $val->id?>">
+                                                                              <div title="liste des participants" class="list-count pull-right red-mint"style="color:#0B0B61; border:0.1px solid; height: 80px;     background-color:#e7edf2  ">
+                                                                        <i class="fa fa-users"></i>
+                                                                    </div></a>
+                                                                 <br>
+                                                                      
+                                                                </a>
+                                                            </div></div></div><br>
+                    <?php }  }?>

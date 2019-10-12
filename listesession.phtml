@@ -1,0 +1,68 @@
+ 
+
+<!-- Page Heading Start -->
+				<div class="page-heading">
+                                    <h1><i class='fa fa-table'></i> Liste des sessions</h1> <br><br>
+            	
+            	<!-- Page Heading End-->				<!-- Your awesome content goes here -->
+		
+ <fieldset   style="padding: 0% ;background-color:rgba(11, 90, 111, 0.1);   "  >
+                  
+				<div class="row">
+					<div class="col-md-12">
+						<div class="widget">
+							
+							<div class="widget-content">
+									
+									
+				<div class="widget-content">
+								<div class="table-responsive"style="   box-shadow: 0px 0px 50px rgba(0,0,0,.8); ">
+									<table data-sortable class="table table-hover table-striped">
+										<thead>
+											<tr>
+												<th>Num</th>
+												<th>langage</th>
+									
+												<th>etat</th>
+                                                                                              
+												 
+											</tr>
+										</thead>
+										
+										<tbody>
+                                                                                      <?php foreach($tabpropo as $form){
+                                                                                    ?>
+									<tr>
+											                                   
+                                                                             <td>  <?= $form->idp ?>  </td>     
+                                                                       <td>  <?= $form->langage ?> </td> 
+                                                                     
+																		
+										 <td>							
+                                                                             <?php if(($form->etat)=='activer'){?>
+                                                                                    
+                                                                                     <a href="updatett?idp=<?= $form->idp ?>" style="text-decoration:none" >   <span class="label label-success" ><?=  $form->etat ?> </span>	</a>				 
+                                                                             <?php }     if(($form->etat)=='desactiver')           {
+                                                                                 ?>	<a href="updatatt?idp=<?= $form->idp ?>" style="text-decoration:none" > <span class="label label-danger" ><?=  $form->etat ?> </span> <?php } ?>  </a>  </td>
+                                                                                    						 
+                                                                      
+                                                                               
+                                                                               
+                                                    	 	
+											</tr>
+                                                                                            <?php } ?>
+										</tbody>
+									</table>
+								</div>
+							</div>
+									
+								
+							</div>
+						</div>
+					</div>
+						
+				</div>
+     </fieldset>
+	
+				    
+          

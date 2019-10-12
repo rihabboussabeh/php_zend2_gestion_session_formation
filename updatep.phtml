@@ -1,0 +1,123 @@
+      <?php echo count($noo) ?>
+                                <!--tab_1_2-->
+                                <div class="tab-pane" id="tab_1_3">
+                                    <div class="row profile-account">
+                                        <div class="col-md-2">
+                                         
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="tab-content">
+                                                
+                                                
+                                                 <?php foreach($noo as $user){
+                                                                                    ?>
+                                                <form class="login-form" method="post" action="addproposition">
+           
+                <h3 style="color:#003366;font-size: 400%">  <i class="fa fa-laptop"></i>  session formation </h3>
+               <br><br><br>
+
+                    
+		  <div class="form-group">
+                    
+                    <label class="control-label visible-ie8 visible-ie9">formateur</label>
+                    <div class="input-icon">
+     
+                        <input class="form-control placeholder-no-fix" readonly type="hidden" id="idformateur" placeholder="idformateur" name="idformateur" value="<?= $user->idformateur ?>"/> </div>
+                </div> 		
+            	  <div class="form-group">
+                    
+                    <label class="control-label visible-ie8 visible-ie9">formateur</label>
+                    <div class="input-icon">
+     
+                        <input  type="hidden" class="form-control" id="idp"  name="idp" value="<?= $user->idp ?>"></div>
+                </div> 
+                <div class="form-group">
+                    
+                    <label class="control-label visible-ie8 visible-ie9">langage</label>
+                    <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                        <input class="form-control placeholder-no-fix" readonly type="text" id="langage" placeholder="langage" name="langage" value="<?= $user->langage ?>"/> </div>
+                </div>
+              
+             <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+               
+                    <div class="input-icon">
+                          <i class="fa fa-calendar"></i>
+                        <input class="form-control placeholder-no-fix" readonly type="text" id="datedebut"name="datedebut"  value="<?= $user->description?>" /> </div>
+                </div>
+              
+                    <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">nbh</label>
+                    <div class="input-icon">
+                        <i class="fa fa-clock-o"></i>
+                        <input class="form-control placeholder-no-fix" type="text" readonly id="nbh" placeholder="nbh" name="nbh" value="<?= $user->nbh ?>" /> </div>
+                </div>
+             
+              
+
+              
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">prixh</label>
+                    <div class="input-icon">
+                        <i class="fa fa-usd"></i>
+                        <input class="form-control placeholder-no-fix" type="text" readonly id="prixh" placeholder="prixh" name="prixh" value="<?= $user->prixh ?>"/> </div>
+                </div>
+             <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">prixsession</label>
+                    <div class="input-icon">
+                       
+                        <input class="form-control placeholder-no-fix" type="text" id="prixs" placeholder="prixs" name="prixs" value="<?= $user->prixs ?>"   /> </div>
+                </div>
+                 <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">nombregroupe</label>
+                    <div class="input-icon">
+                        
+                        <input class="form-control placeholder-no-fix" type="text" id="nbg" placeholder="nbg" name="nbg" value="<?= $user->nbg ?>" /> </div>
+                </div>
+                                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">datesession</label>
+               
+                </div>
+                     <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">etat</label>
+                    <div class="input-icon">
+                        
+                        <input class="form-control placeholder-no-fix" type="hidden" id="etat" placeholder="etats" name="etat" value="activer" /> </div>
+                </div>
+                 <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">id_centre</label>
+                    <div class="input-icon">
+                        
+                        <input class="form-control placeholder-no-fix" type="hidden" id="id_centre" placeholder="id_centre" name="id_centre" value="<?= $user->id_centre ?> " /> </div>
+                </div>
+
+
+          
+                    <button type="submit" class="btn btn-default btn-block" >activer</button>
+							   
+          
+
+            </form>
+                                                 
+                                                 <?php  }
+                                                                                    ?>
+                                                 
+                                            </div>
+                                        </div>
+                                        <!--end col-md-9-->
+                                    </div>
+                                </div>
+                      <?php $this->headScript()
+                              ->prependFile($this->basePath('/assets/global/plugins/jquery-validation/js/additional-methods.min.js'))
+            ->prependFile($this->basePath('/assets/pages/scripts/login-4.min.js')) 
+            ->appendFile($this->basePath('js/update.js'))
+            
+?>
+ 

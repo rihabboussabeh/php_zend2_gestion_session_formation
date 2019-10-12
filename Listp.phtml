@@ -1,0 +1,126 @@
+ 
+                 
+                        <!-- END THEME PANEL -->
+                    
+                        <!-- END PAGE TITLE-->
+                        <!-- END PAGE HEADER-->
+                        <div class="portlet light portlet-fit bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-list font-green"></i>
+                                    <span class="caption-subject bold font-green uppercase"> Liste des propositions</span>
+                                   
+                                </div>
+                             
+                            </div>
+                            <div class="portlet-body">
+                                <div class="mt-timeline-2">
+                                    <div class="mt-timeline-line border-grey-steel"></div>
+                                    <ul class="mt-container">
+                                            <?php foreach($tabpropo as $user){?>
+                                        
+                                        <li class="mt-item" >
+                                            <div class="mt-timeline-icon bg-red bg-font-red border-grey-steel">
+                                                <i class="icon-users"></i>
+                                            </div>
+                                            <div class="mt-timeline-content">
+                                                <div class="mt-content-container"style="   box-shadow: 0px 0px 50px rgba(0,0,0,.3); ">
+                                                    <div class="mt-title">
+                                                        <h3 class="mt-content-title" > <?= $user->langage ?></h3>
+                                                    </div>
+                                                    <div class="mt-author">
+                                                        <div class="mt-avatar">
+                                                            <?php if(($user->etat)=='activer'){?>
+                                                                                    
+                                                                                     <a >   <span class="btn btn-circle btn-icon-only blue" > </span>	</a>				 
+                                                                             <?php }     if(($user->etat)=='desactiver')           {
+                                                                                 ?>	<a > <span class="btn btn-circle btn-icon-only red" > </span> <?php } ?>  </a>  </td>
+                                                                                 
+                                                        </div>
+                                                        <div class="mt-author-name">
+                                                             <?php foreach($formateur as $form){?>
+                                                             <?php if(($form->id)==($user->idformateur)){?>
+                                                            <a href="javascript:;" class="font-blue-madison"> <?=$form->nom ?><?=$form->prenom ?></a>
+                                                             <?php }?><?php }?>
+                                                        </div>
+                                                      
+                                                    </div>
+                                                    <div class="mt-content border-grey-salt">
+                                                         <?php foreach($formation as $forma){?>                                      
+                                                                 <?php if(($user->langage)==($forma->langage)){?>      
+                                                                   <?= $user->langage?>  <br> <br>
+                                                                <h4> Objectif </h4>   <?= $forma->objectif ?> <br> 
+                                                                      <h4> prerequis</h4>       <?= $forma->prequis ?> <br> 
+                                                                       <h4> datebedut</h4>   <?= $user->description ?> <br> 
+                                                                    <h4> durée  :        <?=$user->nbh ?> h  </h4>
+                                                                    <h4> prix par heure :  <?= $user->prixh ?> dt </h4>  
+                                                                    
+                                                                 <?php }}?>             
+                                                                               
+                                                                                               
+                                                                               
+                                                                     <a href="delete?idp=<?= $user->idp ?>" class="btn btn-circle btn-icon-only red"  >
+                                                            <i class="fa fa-times"></i> </a>
+                                                            <a href="updatep?idp=<?= $user->idp ?>" class="btn btn-circle btn-icon-only blue"  >
+                                                            <i class="fa fa-check"></i>
+                                                         
+                                                        </a>
+                                        
+                                                                                <?php } ?>
+                                                    
+                                                     
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        
+                                        
+                                     
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                     
+                               
+                                      
+                                      
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                         
+                    

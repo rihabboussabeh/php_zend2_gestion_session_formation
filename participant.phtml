@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.1
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+ 
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+   
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+       <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="<?php echo $this->basePath() ?>/assets/pages/css/profile.min.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        
+    <!-- END HEAD -->
+
+        <div class="row">
+                            <div class="col-md-2"> </div>
+                     <div class="col-md-6" >
+                                <!-- BEGIN PROFILE SIDEBAR -->
+                                <div class="profile-sidebar" style="width: 700px" >
+                                    <!-- PORTLET MAIN -->
+                                    <div class="portlet light profile-sidebar-portlet ">
+                                           <div class="profile-userpic">
+                                               <img src="<?php echo $this->basePath() ?>/assets/pages/media/profile/user.png" style=" height: 200px;width:200px " class="img-responsive" alt=""> </div>
+                                        <!-- SIDEBAR USERPIC -->
+                                           <?php foreach($par as $par){ ?>
+                                        <div class="profile-userpic">
+                                           
+                                        <!-- SIDEBAR USER TITLE -->
+                                        <div class="profile-usertitle">
+                                               
+                                               
+								    
+                                            <div class="profile-usertitle-name"> <?= $par->nom?> <?= $par->prenom?> </div>
+                                            <div class="profile-usertitle-job"> participant </div>
+                                               
+                                        </div>
+                                        <!-- END SIDEBAR USER TITLE -->
+                                        <!-- SIDEBAR BUTTONS -->
+                                      
+                                        <!-- END SIDEBAR BUTTONS -->
+                                        <!-- SIDEBAR MENU -->
+                                        <div class="profile-usermenu">
+                                            <ul class="nav">
+                                                  <li>
+                                                        <?php foreach($inscription as $part){ ?>
+                                             
+                                                                   <?php foreach($sessions as $sees){ ?> 	
+                                                                                 <?php if(($sees->idp)==($part->id_session)){ ?> 
+                                                 <?php if(($part->id_participant)==($par->id)){ ?>
+                                                                                   <?php $som=1 ?>
+                                                                                  <?php foreach($payement as $pay){ 
+                                                                                      if(($pay->id_session)==($part->id_session)){
+                                                                                          if(($pay->id_participant)==($par->id))?> 
+                                                                                  <?php $som = $pay->montant + $som; ?>
+                                                                                       <?php  $prix = $sees->prixs - $som ?>  
+                                                                                  <?php }}   ?>
+                                                                                 
+                                                <li   class="active">
+                                                    <a  >
+                                                        <i class="fa fa-minus"></i> Reste
+                                                 
+                                                        <br><br>
+                                                        <?php if(isset($prix)){ ?> 
+                                                        <?php if(($prix)>0){ ?> 
+                                                        <i class="fa fa-usd"></i> <input readonly= type="text" id="reste" value="<?= $prix ?>.dt" style=" border-radius: 8px;color: #174169;background-color:#e4edf5 ; height: 50px;width:100px ;padding: 12px 20px;border: 2px solid #0B0B61"  > </a>
+                                                </li> <?php } else {?>
+
+                                                <i class="fa fa-usd"></i> <input readonly= type="text" id="" value="Paiement effectué avec succès"   style=" background-color:#e4edf5  ; height: 50px;width:270px ;border-radius: 8px;color: #174169;padding: 12px 20px;border: 2px solid #0B0B61"  > </a>
+                                              
+                                                <?php } if(($part->id_participant)==($par->id)){ ?>
+                                                 
+                                                </li>
+                                                <li class="active">
+                                                      <?php if(($prix)>0){ ?> 
+                                                    
+  
+
+                                                    <a onclick="this.href='addpaiement?id_session=<?= $part->id_session?>&prix=<?= $prix ?>&id_participant=<?= $par->id ?>&montant='+document.getElementById('pay<?=  $part->id?>').value" > <i class="fa fa-plus"></i>Ajouter montant </a> 
+                                                    
+                                                    <a > <i class="fa fa-usd"></i><input type="number"  min="0" id="pay<?=  $part->id?>"  style=" background-color:#e4edf5  ; height: 30px;width:100px ;border-radius: 8px;color: #174169;padding: 12px 20px;border: 2px solid #0B0B61"  >  
+                                                     
+                     <?php 
+                               if(isset($_GET['message'])){  
+             switch ($_GET['message']) {
+    case 0:
+        echo "<i style='color:#D52000'class='fa fa-exclamation-triangle'></i>";
+        break;
+        case 1:
+        echo "<i style='color:green'class='fa fa-check'></i> ";
+        break;
+   
+}}
+                                            
+?>
+    
+    
+
+
+
+  <?php }  ?> 
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                                                        <table  class="table table-hover table-light"  style="margin-left:360px ;width:300px;height: 100px" >
+                                                             
+                                                <thead>
+                                                  
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach($payement as $pay){ 
+                                                            if(($pay->id_session)==($part->id_session)){
+                                                                 if(($pay->id_session)==($part->id_session)){?>
+                                               
+                                                    <tr>
+                                                     
+                                                        <td> <?= $pay->montant?> dt</td> <td> <?= $pay->date?></td> <td> <a href="deletepaiement?id=<?=$pay->id?>&id_participant=<?=$pay->id_participant?>&id_session=<?=$pay->id_session?>"   style=" height: 30px;width:40px " ><i class='fa fa-repeat' ></i></a></td><td> <a href="print?id=<?=$pay->id?>&nomparticipant=<?=$par->nom?>&prenomparticipant=<?=$par->prenom?>&id_session=<?=$pay->id_session?>&montant=<?= $pay->montant?>&date=<?= $pay->date?>"   style=" height: 30px;width:40px " ><i class='fa fa-print ' ></i></a></td>
+                                                   
+                                                    </tr>
+                                                
+                                                                 <?php }} }?>
+                                                </tbody>
+                                            </table>
+                                                        <?php } ?>
+                                                </li>
+                                                       
+                                                        
+                                                        
+                                              <?php  }} }}  }?>
+                                            </ul>
+                                        </div>
+                                        <!-- END MENU -->
+                                    </div> 
+                                        
+                                    <!-- END PORTLET MAIN -->
+                                    <!-- PORTLET MAIN -->
+                                    <div class="portlet light "  >
+                                        <!-- STAT -->
+                                        <?php if(count($Presence)>0){ ?> 
+                                        <div class="row list-separated profile-stat">
+                                            <div class="col-xs-6">
+                                                <?php  
+                                                    $s=0 ;$f=0 ;foreach($Presence as $pre){ 
+                                                        foreach($Seance as $sean){
+                                                          if(($pre->id_seance)==($sean->id)){
+                                                if(($pre->etat)==('absent')){
+                                                    $s=$s+1;
+                                                }else{
+                                                    $f=$f+1;
+                                                
+                                                
+                                                } }}} ?> 
+                                               
+                                                     
+                                                <div class="uppercase profile-stat-title">  <?= $s  ?> </div>
+                                                  
+                                                <div class="uppercase profile-stat-text"> Absent </div>
+                                            </div>
+                                            <div class=" col-xs-6">
+                                                <div class="uppercase profile-stat-title"> <?= $f  ?> </div>
+                                                <div class="uppercase profile-stat-text"> present </div>
+                                            </div>
+                                          
+                                        </div>
+                                        <?php } ?> 
+                                        <!-- END STAT -->
+                                        <div >
+                                            <h4 class="profile-desc-title">Cin</h4>
+                                            <span class="profile-desc-text"> <?= $par->cin?> </span>
+                                              <h4 class="profile-desc-title">Nom et prenom</h4>
+                                              
+                                            <span class="profile-desc-text"> <?= $par->nom?><?= $par->prenom?> </span>
+                                                  <h4 class="profile-desc-title">telephone </h4>
+                                            <span class="profile-desc-text"> <?= $par->numtel?> </span>
+                                            <div class="margin-top-20 profile-desc-link">
+                                                <i class="fa fa-globe"></i>
+                                                <a  ><?= $par->email?></a>
+                                            </div>
+                                             
+                                        </div>
+                                    </div>   </div>
+                                    </div>
+                                  <?php } ?>  <!-- END PORTLET MAIN -->
+                                </div>
+                                <!-- END BEGIN PROFILE SIDEBAR -->
+                                <!-- BEGIN PROFILE CONTENT -->
+                             
+                           

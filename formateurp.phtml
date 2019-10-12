@@ -1,0 +1,154 @@
+
+      <?php foreach($noo as $pro){   ?>
+  
+
+
+
+
+
+ 
+
+
+
+
+
+
+    
+ 
+
+                    <div class="profile">
+                        <div class="tabbable-line tabbable-full-width">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#tab_1_1" data-toggle="tab"> session de formation </a>
+                                </li>
+                            
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab_1_1">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                                
+                                            
+                                        </div>
+                                        <div class="col-md-11">
+                                            <div class="row">
+                                                <div class="col-md-8 profile-info">
+                                                    <?php foreach($formtable as $format){   ?>
+                                                   <?php if(($pro->idformateur)==($format->id)){?>  
+                                            <h1 class="font-green sbold uppercase"><?= $format->nom ?> <?= $format->prenom ?></h1>
+                                            
+                                                       <?php }   ?>  <?php }   ?>
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <i class="fa fa-laptop"></i> <?= $pro->langage ?></li>
+                                                        <li>
+                                                            <i class="fa fa-calendar"></i> session juin </li>
+                                                        <li>
+                                                          
+                                                    </ul>
+                                                </div>
+                                                <!--end col-md-8-->
+                                                <div class="col-md-4">
+                                                <a data-toggle="tooltip" title="more" class="btn btn-default" href="listesession" style="color:#003366; width: 50% ; height: 50%"><i class="fa fa-share" ></i></a>
+                                                       
+                                                </div>
+                                                <!--end col-md-4-->
+                                            </div>
+                                            <!--end row-->
+                                            <div class="tabbable-line tabbable-custom-profile">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active">
+                                                        <a href="#tab_1_11" data-toggle="tab"> Liste des participant </a>
+                                                    </li>
+                                                    
+                                                </ul>
+                                                <div class="tab-content">
+                                                 <div class="table-responsive">
+									<table data-sortable class="table table-hover table-striped">
+										<thead>
+											<tr>
+												<th>Num</th>
+                                                                                                <th>cin</th>
+												<th>nom</th>
+												<th>prenom</th>
+                                                                                                <th> numero de telephone </th>
+												<th>email</th>
+												
+												
+												<th>etat</th>
+                                                                                                <th>login</th>
+                                                                                                <th>passwrod</th>
+												<th data-sortable="false">Option</th>
+											</tr>
+										</thead>
+										
+										<tbody>
+                                                                     <?php foreach($participant as $part){   ?>
+                                                                       <?php if(($pro->idp)==($part->id_session)){?>   
+									<tr>
+											                                   
+                                                                             <td>  <?= $part->id ?>  </td>  
+                                                                             <td>    <?= $part->cin ?></td> 
+                                                                       <td>  <?= $part->nom ?> </td> 
+                                                                       <td>       <?= $part->prenom ?> </td> 
+                                                                        <td>    <?= $part->numtel ?></td> 
+                                                                    <td>  <?=$part->email ?> </td> 
+                                                                   
+                                                                        
+                                                                        
+                                                                      
+																		
+										 <td>							
+                                                                             <?php if(($part->etat)=='activer'){?>
+                                                                                    
+                                                                                     <a href="updateparticipant?id=<?= $part->id ?>" style="text-decoration:none" >   <span class="label label-success" ><?=  $part->etat ?> </span>	</a>				 
+                                                                             <?php }     if(($part->etat)=='desactiver')           {
+                                                                                 ?>	<a href="updataparticipant?id=<?= $part->id ?>" style="text-decoration:none" > <span class="label label-danger" ><?=  $part->etat ?> </span> <?php } ?>  </a>  </td>
+                                                                               						 
+                                                                        <td>    <?= $part->login ?></td> 
+                                                                         <td>    <?= $part->password ?></td> 
+                                                                       
+                                                                               
+                                                                               <td>
+                                                                                <div class="btn-group btn-group-xs">
+                                                                                    <a data-toggle="tooltip" title="supprimer" class="btn btn-default" href="" style="color:red; width: 100% ; height: 100%"><i class="fa fa-times" ></i></a>
+                                                                                    <a data-toggle="tooltip" title="more" class="btn btn-default" href="" style="color:#003366; width: 100% ; height: 100%"><i class="fa fa-share" ></i></a>
+                                                                                    
+                                                                                
+											
+                                                                                </div>
+                                                                                </td>
+                                                    	 	
+											</tr>
+                                                                                             <?php }   ?>  <?php }   ?>   
+										</tbody>
+									</table>
+								</div>
+                                                    <!--tab-pane-->
+                                              
+                                                    <!--tab-pane-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--tab_1_2-->
+                       
+                                <!--end tab-pane-->
+                           
+                                <!--end tab-pane-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+            <!-- BEGIN QUICK SIDEBAR -->
+      
+            <!-- END QUICK SIDEBAR -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <?php }   ?>

@@ -1,0 +1,154 @@
+	
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Metronic Admin Theme #1 | User Login 4</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="Preview page of Metronic Admin Theme #1 for " name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- END HEAD -->
+
+    <body class=" login">
+        <!-- BEGIN LOGO -->
+        <div class="logo">
+          
+                <!--<img src="<?php echo $this->basePath() ?>/assets/pages/img/" alt="" /> </a>-->
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN LOGIN -->
+        <div class="content"  >
+            <!-- BEGIN LOGIN FORM -->
+              <div class="row"><div class="col-md-3 "></div>
+                   <div class="col-xs-6 portlets" style="box-shadow: 0px 0px 50px rgba(0,0,0,.5)" > 
+            <form class="login-form" method="post" action="addproposition"   >
+           
+                <h3 style="color:#003366;font-size: 400%">  <i class="fa fa-laptop"></i>  Proposition</h3>
+               <br><br><br>
+               
+              <?php if(count($formation)>0) { ?>
+                
+                <div class="form-group">
+               
+                    <label class="control-label visible-ie8 visible-ie9">langage</label>
+                    <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                        
+                             <select class="bs-select form-control"  id="langage"    name="langage">
+                                    <?php foreach ($formation as $for) { ?>
+                                                            <option><?=    $for->langage ?></option>
+                                    <?php } ?>
+                                                        </select>
+                </div>   </div>
+    
+         
+                 
+                 
+                    <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">nbh</label>
+                    <div class="input-icon">
+                        <i class="fa fa-clock-o"></i>
+                        <input class="form-control placeholder-no-fix" type="number"   required id="nbh" placeholder="nbh" name="nbh" /> </div>
+                </div>
+           
+              
+
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">prixh</label>
+                    <div class="input-icon">
+                        <i class="fa fa-usd"></i>
+                        <input class="form-control placeholder-no-fix"  type="number"   required id="prixh" placeholder="prixh" name="prixh" /> </div>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">objectif</label>
+                    <div class="input-icon">
+                        <i class="fa fa-keyboard-o"></i>
+                        <input class="form-control placeholder-no-fix" type="text"pattern="\d{4}/\d{1,2}/\d{1,2}" title=" format invalid (yyyy/mm/dd) " required id="datedebut" placeholder="yyyy/mm/dd" name="datedebut"   />   </div>
+                </div>
+             <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">prixsession</label>
+                    <div class="input-icon">
+                       
+                        <input class="form-control placeholder-no-fix" type="hidden" id="prixs" placeholder="prixs" name="prixs" value="admin" /> </div>
+                </div>
+                 <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">nombregroupe</label>
+                    <div class="input-icon">
+                        
+                        <input class="form-control placeholder-no-fix" type="hidden" id="nbg" placeholder="nbg" name="nbg" value="admin" /> </div>
+                </div>
+                <div class="form-group">
+                   <div class="input-icon">
+                         <?php foreach($noo as $user){  ?>
+                       <input class="form-control placeholder-no-fix" type="hidden" id="idformateur"  name="idformateur" value="<?= $user->id ?>" /> 
+                         <?php }  ?>
+                   </div>
+                </div>
+            <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">etat</label>
+                    <div class="input-icon">
+                        
+                        <input class="form-control placeholder-no-fix" type="hidden" id="etat" placeholder="etats" name="etat" value="desactiver" /> </div>
+                </div>
+  <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">id_centre</label>
+                    <div class="input-icon">
+                      
+                        <input class="form-control placeholder-no-fix" type="hidden" id="id_centre" placeholder="id_centre" name="id_centre" value="<?=  $_GET['id_centre']?>" /> </div>
+                </div>
+              
+
+          
+               <button type="submit" class="btn btn-default btn-block" >Envoyer</button>
+               <br><br>				   
+                <?php } else {?>
+               <div class="form-group" style="margin-left: 140px">
+               
+                    <label class="control-label visible-ie8 visible-ie9">ajouter</label>
+                    <div class="input-icon">
+                       
+                        
+                              <div class="btn-group btn-group-xs">
+                                  <a data-toggle="tooltip" title="ajouter" class="btn btn-default" href="formation" style="color:#003366; width: 200% ; height: 200%"><i class="fa fa-plus" ></i>&nbsp;&nbsp;&nbsp;Ajouter formation</a>
+                                                                                    
+                                                                                </div>
+                </div>   </div>
+                 <?php }  ?>
+
+            </form></div>     </div>
+            <!-- END REGISTRATION FORM -->
+        </div>
+        <!-- END LOGIN -->
+        <!-- BEGIN COPYRIGHT -->
+     
+        <!-- END COPYRIGHT -->
+        <!--[if lt IE 9]>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+       
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <!-- END THEME LAYOUT SCRIPTS -->
+  <?php $this->headScript()
+            ->prependFile($this->basePath('/assets/global/plugins/jquery-validation/js/additional-methods.min.js'))
+            ->prependFile($this->basePath('/assets/pages/scripts/login-4.min.js')) 
+                    ->prependFile($this->basePath('/assets/pages/scripts/form-validation-md.min.js')) 
+             ->prependFile($this->basePath('/assets/global/plugins/jquery-validation/js/jquery.validate.min.js')) 
+             ->prependFile($this->basePath('/assets/global/plugins/jquery-validation/js/additional-methods.min.js')) 
+          ->prependFile($this->basePath('/assets/pages/scripts/pro.js')) 
+         ?>
+
+                <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('/assets/pages/css/login-4.min.css'))
+                       ?>                

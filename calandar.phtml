@@ -1,0 +1,166 @@
+
+			<!-- ============================================================== -->
+			<!-- Start Content here -->
+			<!-- ============================================================== -->
+        
+        <?php echo $this->headLink ()
+                        ->prependStylesheet($this->basePath('assets/libs/fullcalendar/fullcalendar.css'))
+                       ?>                
+                                            <centre>
+
+                        
+                                                <div class="cont" >
+            	<!-- BEGIN MODAL -->
+	           
+	            <!-- END MODAL --><br><br>
+                    <div class="row"><div class="col-md-3 "></div>
+					<div class="col-xs-6 portlets"style="  box-shadow: 0px 0px 50px rgba(0,0,0,.5) ">
+						<div class="widget">
+							<div class="widget-header">
+							
+							</div>
+						
+				                </div>
+				                <div class="col-md-12">
+				                    <div class="widget bg-white">
+				                        <div class="widget-body">
+				                            <div class="row">
+				                               
+				                                    <div id="calendar"></div>
+				                                </div>
+				                            </div>
+				                        </div>
+				                    </div>
+                                        </div>	<br><br>			                </div><br><br>
+
+						</div><br><br>
+					</div>
+				</div></centre>
+                    <!--definir les scripts especifique a la view courants-->
+                                       <!--definir les scripts especifique a la view courants-->
+  <?php 
+                    ob_start(); ?>
+                    $(function () {
+    
+    function runCalendar() {
+        var $modal = $('#event-modal');
+        $('#draggable-events div.draggable-event').each(function () {
+            // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+            // it doesn't need to have a start or end
+            var eventObject = {
+                title: $.trim($(this).text()) // use the element's text as the event title
+            };
+            // store the Event Object in the DOM element so we can get to it later
+            $(this).data('eventObject', eventObject);
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true, // will cause the event to go back to its
+                revertDuration: 20 //  original position after the drag
+            });
+        });
+        /*  Initialize the calendar  */
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+        var form = '';
+        var calendar = $('#calendar').fullCalendar({
+            slotDuration: '00:15:00', /* If we want to split day time each 15minutes */
+            minTime: '08:00:00',
+            maxTime: '18:00:00',          
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: [<?php    foreach ($seance as $sean){ ?>
+            {<?php    foreach ($sessions as $sc){ ?>
+            <?php  if(($sc->idp)==($sean->id_session)){ ?>
+            <?php  if(($sean->etat)==('activer')){ ?>
+                title: '<?= $sc->langage ?>',
+                start: '<?= $sean->dateseance ?>',
+               session:'<?= $sean->id_session ?>',
+               seance:'<?= $sean->id ?>'
+            
+            <?php  }} ?><?php  } ?>
+            },
+            <?php  } ?>
+            ],
+            editable: true,
+            droppable: true, // this allows things to be dropped onto the calendar !!!
+            drop: function (date, allDay) { // this function is called when something is dropped
+                // retrieve the dropped element's stored Event Object
+                var originalEventObject = $(this).data('eventObject');
+                var $categoryClass = $(this).attr('data-class');
+                // we need to copy it, so that multiple events don't have a reference to the same object
+                var copiedEventObject = $.extend({}, originalEventObject);
+                // assign it the date that was reported
+                copiedEventObject.start = date;
+                copiedEventObject.allDay = allDay;
+                if ($categoryClass)
+                    copiedEventObject['className'] = [$categoryClass];
+                // render the event on the calendar
+                // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+                $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+                // is the "remove after drop" checkbox checked?
+                if ($('#drop-remove').is(':checked')) {
+                    // if so, remove the element from the "Draggable Events" list
+                    $(this).remove();
+                }
+            },
+
+            selectable: true,
+          
+            select: function (start, end, allDay) {
+                $modal.modal({
+                    backdrop: 'static'
+                });
+                form = $("<form></form>");
+                form.append("<div class='row'></div>");
+                    
+                     $modal.find('.delete-event').hide().end().find('.save-event').show().end().find('.modal-body').empty().prepend(form).end().find('.save-event').unbind('click').click(function () {
+                    form.submit();
+                });
+                $modal.find('form').on('submit', function () {
+                    title = form.find("input[name='title']").val();
+                    $categoryClass = form.find("select[name='category'] option:checked").val();
+                   if (dateStart !== null ) {
+                       
+
+	
+				var dateStart =$.fullCalendar.formatDate(start,'yyyy-MM-dd HH:mm:ss'); 
+				
+				alert(dateStart);
+				
+				
+			}
+                    else{
+                        alert('You need a title for the event!');
+                    }
+                    $modal.modal('hide');
+                    return false;
+                });
+                calendar.fullCalendar('unselect');
+            }
+
+        });
+    }
+
+    runCalendar();
+
+});
+    <?php 
+    
+    $script= ob_get_contents();
+ ob_end_clean(); ?>                 
+			
+<!-- Footer Start -->
+   <?php $this->headScript()
+            ->prependFile($this->basePath('assets/libs/fullcalendar/fullcalendar.min.js'))
+            ->appendScript($script,'text/javascript');
+       ?>
+                    
+                   
+				            <!-- Footer Start -->
+          

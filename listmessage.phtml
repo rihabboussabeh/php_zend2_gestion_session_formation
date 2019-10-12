@@ -1,0 +1,68 @@
+
+                    
+                                             
+                                           
+                                     
+                   <div class="mt-element-list">
+                 
+ 
+ 
+                    <?php foreach ($message as $mess) {?>
+                       
+                       
+   
+                                      
+                                    <?php  $messa=substr($mess->recepteur, -1) ; if($messa=='f'){ ?>
+                          <?php  $messag=substr($mess->recepteur,0, -1) ; if($messag==$user->id){ ?>                 
+                                      <div class="portlet-body">
+                                                        <div class="mt-element-list">
+                                                            <div class="mt-list-head list-todo red" style="color:#0B0B61;  box-shadow: 0px 0px 50px rgba(0,0,0,.3);     background-color:#e7edf2; "> 
+                                                                  
+                                                                <div class="list-head-title-container">
+                                                                
+                                                    <?php        
+                                                    
+                                                    $emt=substr($mess->emetteur, -1) ;  
+                                                    
+                                                    
+                                                     switch ($emt) {
+           
+                                                            case 'c':
+                                                            
+                                                                     $cent=substr($mess->emetteur,0, -1) ;  
+                                                    
+                                                         
+                                                                    foreach ($centre as $cen) {       
+                                                                      { 
+                                                                          
+                                                                      if( ($cen->id)== ($cent) ){?>  
+                                                                    
+                                                                    <h3 class="list-title"><i class="fa fa-home"></i>_<a style="color:#0B0B61; "href="formcentre?id=<?=    $cen->id  ?>"><?=     $cen->nom  ?></a></h3><br> 
+                                                             <br>       <?=     $mess->date  ?><br>    <div class="mt-list-head list-todo red" style="color:#0B0B61;   font-style: italic; height: 50px;   background-color:#ffffff;border: 2px solid #0B0B61">
+                                                                 <b>   <?=    $mess->message  ?></b><br><br></div>
+                                                                              
+                                                                             </h3>
+                                                                         <?php }}}?>
+                                                                
+                                                                               <div class="list-head-count">
+                                                                        <div class="list-head-count-item">
+                                                                    
+                                                                        <div class="list-head-count-item">
+                                                                     
+                                                                    </div>
+                                                                </div>
+                                                              
+                                                                 <a  href="message?idrecepteur=<?= substr($mess->emetteur,0, -1) ?>" >
+                                                               
+                                                                     <div class="list-count pull-right red-mint"style="color:#0B0B61;   height: 75px;   background-color:#eaecf9;border:1px solid ">
+                                                                        <i class="fa fa-reply-all"></i>_Répondre_<i class="fa fa-envelope"></i>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                                           <?php            break;                                             
+                                                            
+                                                            
+                                                     }?>
+                                                  
+                                                                </div></div><br>
+                          <?php }   }}?>

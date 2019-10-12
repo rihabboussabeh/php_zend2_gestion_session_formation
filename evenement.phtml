@@ -1,0 +1,141 @@
+
+   <h1 class="page-title">&nbsp;  &nbsp;
+       <span class="caption-subject bold font-yellow-casablanca uppercase">  <i class="fa fa-calendar-check-o"></i> Liste des evenements</span> 
+                            
+                        </h1>
+                        <!-- END PAGE TITLE-->
+                        <!-- END PAGE HEADER-->
+                        <div class="profile">
+                            <div class="tabbable-line tabbable-full-width">
+                              
+                                <div class="tab-content">
+                             
+                                    <!--tab_1_2-->
+                                   <div class="tab-pane active" id="tab_1_3">
+                                  
+                                            <div class="col-md-12">
+                                                <div class="tab-content">
+                                                    <div id="tab_1" class="tab-pane active">
+                                                        <div id="accordion1" class="panel-group">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    
+                                                                </div>
+                      
+                                                                <div id="accordion1_1" class="panel-collapse collapse in">
+           <?php if(count($evenement)>0){  ?>  
+  <?php foreach($evenement as $event){  ?>
+<?php if(($event->etat)=='activer'){?>
+                               
+                                                                    <fieldset   style="padding: 0% ;background-color:rgba(238, 123, 43, 0.1);; border:2px double rgba(238, 123, 43, 0.2);"  >       
+                                                                        <br>   <br>                            
+                        <div class="row">
+               
+                            <div class="col-md-1">
+                         
+                                <!-- END Portlet PORTLET-->
+                            </div>
+                             <?php // if(! $user->etat) {  ?>
+                            <div class="col-md-10 ">
+                                <!-- BEGIN Portlet PORTLET-->
+                                <div style="width:  850px"  style="height:150px;box-shadow: 0px 0px 50px rgba(0,0,0,.5) " class="portlet light"   >
+                                    <div   class="portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject bold font-yellow-casablanca uppercase"> <i class="fa fa-calendar "></i> &nbsp;&nbsp; <?= $event->titre ?> </span></div>
+                                            
+                                            
+                                        <div class="tools">
+                                          
+                                            <a href="javascript:;" class="collapse"> </a>
+                                            <a href="" class="fullscreen"> </a>
+                                        
+                                        </div>
+                                       
+                                        <div class="actions">
+                                           
+                                            <a href="<?php echo $this->basePath() ?>/application/participant/inscriptione?id_event=<?= $event->id ?>&id_par=<?=$participant->id ?>" class="btn btn-default btn-sm">
+                                           
+                                                <span class="caption-subject bold font-yellow-casablanca uppercase">      <i class="fa fa-user-plus" ></i> Participantion</span> </a>
+                                               <h6 class="caption" style="font-size:10px">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div   style="width:  400px"  style="height:150px"data-always-visible="1" data-rail-visible="1" data-rail-color="blue" data-handle-color="red">
+                                          
+                                 
+                                            <h2>    <?= $event->titre ?></h2> 
+                                            <h4>    <i class="fa fa-calendar"></i>&nbsp;&nbsp;<u>date  </u>   :            <?=$event->date ?> </h4> 
+                                                <h4>    <i class="fa fa-edit"></i>&nbsp;&nbsp; <u>description </u>  :   <?= $event->description ?> </h4> 
+                                                
+                                                
+                                                  
+                                                 <h4>  <i class="fa fa-map-marker"></i>&nbsp;&nbsp;<u>lieu    </u>  :  <?= $event->lieu ?>  </h4> 
+                                                               
+                                                
+                              
+                                        
+                                        
+                                        
+                                        </div>
+                                </div>
+                                <!-- END Portlet PORTLET-->
+                            </div>
+                          
+                        </div>
+               
+                                
+                                <?php // } ?>
+                <!-- END QUICK SIDEBAR -->
+</div>
+    
+    </fieldset>
+    
+    <?php }}} ?>
+   
+                                                          
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end tab-pane-->
+                               
+                                    <!--end tab-pane-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END CONTENT BODY -->
+                </div>
+                <!-- END CONTENT -->
+                <!-- BEGIN QUICK SIDEBAR -->
+           
+                
+                <!-- END QUICK SIDEBAR -->
+            </div>
+            <!-- END CONTAINER -->
+           
+            <!-- END FOOTER -->
+        </div>
+        <!-- BEGIN QUICK NAV -->
+ 
+        <div class="quick-nav-overlay"></div>
+        <!-- END QUICK NAV -->
+        <!--[if lt IE 9]>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+ 
+        <?php $this->headScript()
+            ->prependFile($this->basePath('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js'))
+            ?>
+        
+        

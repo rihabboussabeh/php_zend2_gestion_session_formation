@@ -1,0 +1,68 @@
+
+<!-- Page Heading Start
+				<div class="page-heading">
+            		<h1><i class='fa fa-table'></i> Liste de participants </h1>
+            	
+            	<!-- Page Heading End-->				<!-- Your awesome content goes here -->
+		
+ <fieldset   style="padding: 0% ;background-color:rgba(11, 90, 111, 0.1);  "  >
+                  
+				<div class="row">
+					<div class="col-md-12">
+						<div class="widget">
+							
+							<div class="widget-content">
+									
+									
+				<div class="widget-content">
+								<div class="table-responsive"style="  box-shadow: 0px 0px 50px rgba(0,0,0,.3)">
+									<table data-sortable class="table table-hover table-striped">
+										<thead>
+											<tr>
+												<th>nom</th>
+												<th>prenom</th>
+									
+												<th>telephone</th>
+                                                                                              <th>email</th>
+                                                                                             
+                                                                                         
+                                                                                                
+												 
+											</tr>
+										</thead>
+										
+										<tbody>
+                                                                                      <?php if (count($inscription)>0) { foreach($inscription as $part){ ?>
+                                                                                     <?php foreach($participant as $par){ ?>
+                                                                                    <?php if(($part->id_participant)== ($par->id)){ ?>
+									<tr>
+											                                   
+                                                                             <td>  <?= $par->nom?>  </td>     
+                                                                       <td> <?= $par->prenom?></td> 
+                                                                         <td> <?= $par->numtel?></td> 
+                                                                       <td> <?= $par->email?></td> 
+                                                                     
+										 								
+										 <td>							
+                                                                        
+                                                           
+                                                                                 <?php }}?>
+                                                                                    </td> 
+                                                    	 	
+											</tr>
+                                                                                      <?php }}  ?>
+										</tbody>
+									</table>
+								</div>
+							</div>
+									
+								
+							</div>
+						</div>
+					</div>
+						
+				</div>
+     </fieldset>
+	
+				    
+          

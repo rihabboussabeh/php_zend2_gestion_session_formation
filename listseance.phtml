@@ -1,0 +1,32 @@
+
+                    
+                                             
+                                           
+                                     
+                   <div class="mt-element-list">
+                      
+ 
+ 
+                    <?php foreach ($sessions as $val) {?>
+                     <?php foreach ($session as $sess) {?>
+                                              
+               <?php if (($sess->idp)==($val->id_session)) {?>
+  <div class="portlet-body">
+                                                        <div class="mt-element-list">
+                                                            <div class="mt-list-head list-todo red" style="color:#0B0B61;      box-shadow: 0px 0px 50px rgba(0,0,0,.3);  background-color:#e7edf2; ">
+                                                                <div class="list-head-title-container">
+                                                                    <h3 class="list-title"><?= $sess->langage?></h3>
+                                                                    <div class="list-head-count">
+                                                                        <div class="list-head-count-item">
+                                                                    
+                                                                        <div class="list-head-count-item">
+                                                                     
+                                                                    </div>
+                                                                </div>
+                                                                <a href="lesseances?id_session=<?= $val->id_session ?>">
+                                                                    <div class="list-count pull-right red-mint"style="color:#0B0B61;  height: 80px;   background-color:#e7edf2;border: 1px solid   ">
+                                                                        <i class="fa fa-clock-o" style="font-size: 35px;"></i>
+                                                                    </div>
+                                                                </a>
+                                                            </div></div></div><br>
+         <?php  }} }?>

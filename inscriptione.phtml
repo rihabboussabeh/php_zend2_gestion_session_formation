@@ -1,0 +1,106 @@
+
+
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Metronic Admin Theme #1 | User Login 4</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="Preview page of Metronic Admin Theme #1 for " name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- END HEAD -->
+
+    <body class=" login">
+        <!-- BEGIN LOGO -->
+        <div class="logo">
+          
+                <!--<img src="<?php echo $this->basePath() ?>/assets/pages/img/" alt="" /> </a>-->
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN LOGIN -->
+        <div class="content">
+            <!-- BEGIN LOGIN FORM -->
+              <div class="row"><div class="col-md-4 "></div>
+                   <div class="col-xs-4 portlets"> 
+            <form class="login-form" >
+                
+           
+               <h3>  <i class="fa fa-user"></i> <?= $ident->nom ?>_<?= $ident->prenom ?></h3>
+                  
+               <br>
+        
+                  
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    
+                  
+                  <div class="form-group">
+                    
+            
+                      
+                   
+                  
+           </div>
+                      <input class="form-control placeholder-no-fix" type="hidden" id="etat"  name="etat"  value="activer"  /> 
+             
+                       <?php foreach($evenement as $event){  ?>
+                    <input class="form-control placeholder-no-fix" type="hidden"   name="id_event"  id="id_event" value="<?= $event->id ?>"  /> 
+             <?php } ?> 
+                             
+                       <?php foreach($participant as $par){  ?>
+                    <input class="form-control placeholder-no-fix" type="hidden"   name="id_par"  id="id_par" value="<?= $par->id ?>"  /> 
+             <?php } ?> 
+           
+             
+                   
+                   
+                  
+                <?php  if(count($participation)>0){  ?>
+                  
+                        <div class="form-actions">
+                       <button type="button" id="register-submit-btn" style="background-color:rgba(238, 123, 87, 1); width:400px;height: 50px "class="btn green " > Annuler la participation </button>
+                </div>
+                        <?php } else  {  ?> 
+                        <div class="form-actions">
+                       <button type="button" id="register-submit-btn" style="background-color:rgba(238, 123, 87, 1); width:400px;height: 50px "class="btn green " onclick="participation()" >Confirmer votre participation </button>
+                </div>
+                    
+
+                 <?php }?>  
+        
+           
+                <p> </p>
+                  </div>
+            <!-- END REGISTRATION FORM -->
+         </form></div>
+        <!-- END LOGIN -->
+        <!-- BEGIN COPYRIGHT -->
+      
+        <!-- END COPYRIGHT -->
+        <!--[if lt IE 9]>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+       
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <!-- END THEME LAYOUT SCRIPTS -->
+  <?php $this->headScript()
+            ->prependFile($this->basePath('/assets/global/plugins/jquery-validation/js/additional-methods.min.js'))
+            ->prependFile($this->basePath('/assets/pages/scripts/login-4.min.js')) 
+          ->prependFile($this->basePath('/assets/pages/scripts/parti.js'))?>
+
+                <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('/assets/pages/css/login-4.min.css'))
+                       ?>                
+                     
+  
+   

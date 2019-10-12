@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.1
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Metronic Admin Theme #1 | User Login 4</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="Preview page of Metronic Admin Theme #1 for " name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+        <link rel="shortcut icon" href="favicon.ico" />
+    
+    
+    
+    </head>
+    <!-- END HEAD -->
+
+    <body class=" login"> 
+    <img src="<?php echo $this->basePath() ?>/img/inscrit.png" alt="" style="margin-left:280px; "width="508"  height="160" /> 
+          
+        <div class="logo">
+           
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN LOGIN -->
+        <div class="content">
+            <!-- BEGIN LOGIN FORM -->  
+              <div class="row"><div class="col-md-3"></div>
+                 
+                  <header class="ajout">
+                      <div class="col-xs-4 portlets" style=" width: 600px; height: 600px; box-shadow: 0px 0px 50px #888888; " > 
+            <form class="login-form" method="post" action="addcentre" >
+           
+             
+               <br> 
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">Nom</label>
+                    <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                        <input class="form-control placeholder-no-fix"   pattern="[A-Za-z]{3,}" title=" Vérifiez votre nom " required type="text" id="nom"  class="form-control" placeholder="nom" name="nom" /> </div>
+                </div>
+       
+                  <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">ville</label>
+                    <div class="input-icon">
+                        <i class="fa fa-map-marker"></i>
+                        <input class="form-control placeholder-no-fix" type="text"   class="form-control" pattern="[A-Za-z]{3,}" title=" Vérifiez votre ville " required id="ville" placeholder="ville"  name="ville" /> </div>
+                </div>
+             
+               
+                 <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">adress</label>
+                    <div class="input-icon">
+                        <i class="fa fa-map-marker "></i>
+                        <input class="form-control placeholder-no-fix"  class="form-control"  title=" Vérifiez votre adress " required type="text" id="adress" placeholder="adress" name="adress" /> </div>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">num_tel</label>
+                    <div class="input-icon">
+                        <i class="fa fa-mobile"></i>
+                        <input class="form-control placeholder-no-fix"  min="0" pattern="{8,}" title=" Vérifiez votre numero  " required  class="form-control"   required type="number" id="num_tel" placeholder="num_tel"  name="num_tel" /> </div>
+                </div>
+                 
+                 
+              
+
+              
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">Email</label>
+                    <div class="input-icon">
+                        <i class="fa fa-envelope"></i>
+                        <input class="form-control placeholder-no-fix"  class="form-control"  type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required  id="email" placeholder="Email" name="email" /> </div>
+                </div>
+             
+              
+              
+                  
+                <div class="form-group">
+                    <?php if(isset($_GET['rslt'])) { 
+                        
+                        
+                        switch ($_GET['rslt']) {
+    case 1:?> 
+                    <p style="color: red">Cet login exist déjà, veuillez choisir un autre </p>
+        <?php break;
+    case 2:?>  
+             <p style="color: red">Cette adresse e-mail existe déjà</p>
+                 <?php        break;}
+                       }?>      
+        
+                 
+                 
+             <br>  <br>  <br>  <br>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">Login</label>
+                    <div class="input-icon">
+                        <i class="fa fa-user"></i>
+                        <input class="form-control placeholder-no-fix"  pattern="[A-Za-z]{3,}"  title=" le login doit contenir au moins 3 caractères  "  required  class="form-control" type="text" id="login" autocomplete="off" placeholder="Username" name="login" /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">Password</label>
+                    <div class="input-icon">
+                        <i class="fa fa-lock"></i>
+                        <input class="form-control placeholder-no-fix" pattern="{6,}" required title=" le password doit contenir au moins 6 caractères"  class="form-control" type="password" id="password" autocomplete="off" id="register_password" placeholder="Password" name="password" /> </div>
+                </div>
+                   <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">Verif Password</label>
+                    <div class="input-icon">
+                        <i class="fa fa-lock"></i>
+                        <input class="form-control placeholder-no-fix" pattern="{6,}" required title=" le password doit contenir au moins 6 caractères"  class="form-control" type="password" id="passwordverif" autocomplete="off" id="register_password" placeholder="confirmer password " name="password" /> </div>
+             <span id="message"></span>
+                   
+                     <?php 
+                    ob_start(); ?>
+                    $('#password , #passwordverif').on('keyup', function () {
+    if ($('#password').val() != $('#passwordverif').val()) {
+           $('#message').html('verifier votre mot de pass').css('color', 'red');
+ 
+    } else  
+         $('#message').html('correct').css('color', 'green');
+});
+				 
+    <?php 
+    
+    $script= ob_get_contents();
+ ob_end_clean(); ?>                 
+			
+<!-- Footer Start -->
+  
+            </div>    
+                                             
+                                        
+                <div class="form-group">
+                 
+                    <div id="register_tnc_error"> </div>
+                </div> <br> 
+                <div class="form-actions">
+                    <button type="submit" id="register-submit-btn" style="background-color:#2f6084;height: 50px" class="btn green pull-right" > crée compte </button>
+                </div>
+            </div> </form>    </div>
+                  </header> 
+            <!-- END REGISTRATION FORM -->
+        </div><br><br>
+        <!-- END LOGIN -->
+        <!-- BEGIN COPYRIGHT -->
+         
+        <!-- END COPYRIGHT -->
+        <!--[if lt IE 9]>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+       
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <!-- END THEME LAYOUT SCRIPTS -->
+  <?php $this->headScript()
+            ->prependFile($this->basePath('/assets/global/plugins/jquery-validation/js/additional-methods.min.js'))
+            ->prependFile($this->basePath('/assets/pages/scripts/login-4.min.js')) 
+            ->prependFile($this->basePath('/assets/pages/scripts/form-validation-md.min.js')) 
+             ->prependFile($this->basePath('/assets/global/plugins/jquery-validation/js/jquery.validate.min.js')) 
+             ->prependFile($this->basePath('/assets/global/plugins/jquery-validation/js/additional-methods.min.js')) 
+          ->prependFile($this->basePath('/assets/pages/scripts/insc.js'))
+           ->appendScript($script,'text/javascript');?>
+
+                <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('/assets/pages/css/login-4.min.css'))
+                       ?>                
+                     
+  

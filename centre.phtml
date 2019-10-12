@@ -1,0 +1,130 @@
+ 
+                  
+                
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="centre">
+                                    <div class="portlet-title">
+                                   
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div class="timeline">
+                                            <!-- TIMELINE ITEM -->
+                                             <?php foreach ($centre as $val) { ?>
+                                            <div class="timeline-item">
+                                                <div class="timeline-badge"style="">
+                                                    <img class="timeline-badge-userpic" src="<?php echo $this->basePath() ?>/assets/pages/media/users/ok.jpg"> </div>
+                                                <div class="timeline-body"style="box-shadow: 0px 0px 50px rgba(0,0,0,.5)">
+                                                    <div class="timeline-body-arrow"> </div>
+                                                    <div class="timeline-body-head">
+                                                        <div class="timeline-body-head-caption">
+                                                            <a href="javascript:;" class="timeline-body-title font-blue-madison">  <?=    $val->nom ?></a>
+                                                          
+                                                            <span class="timeline-body-time font-grey-cascade">    <i class="fa fa-map-marker"></i>_ <?=    $val->ville ?>_ <?=    $val->adress ?> &nbsp; &nbsp; <i class="fa fa-envelope-o"></i>_<?=    $val->email ?>&nbsp; &nbsp; <i class="fa fa-mobile"></i>_<?=    $val->num_tel ?></span>
+                                                        </div>
+                                               
+                                                    </div>
+                                                    <div class="timeline-body-content" >
+                                                        
+                                
+                                                          <div class="portlet-body">
+                                                              <div class="row">  <div class="col-md-7"></div>
+                                                      <div class="col-md-5"> 
+                                                           <div class="btn-group btn-group-xs">
+                                                               <a data-toggle="tooltip" title="more" class="btn btn-default" href="listeformation?id_centre=<?= $val->id ?>" style="color:#003366; width: 300px ;height: 40px; font-size: 20px;border: outset">Afficher la liste de sessions</a>
+                                                                                    
+                                                                                
+											
+                                                                                </div>
+                                       </div>  </div>
+                                    </div>                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END TIMELINE ITEM -->
+                                            <!-- TIMELINE ITEM -->
+                                             <?php } ?>
+                                 
+                                            <!-- TIMELINE ITEM -->
+                                    
+                                            <!-- END TIMELINE ITEM -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <!-- END CONTENT BODY -->
+            
+                <!-- END CONTENT -->
+                <!-- BEGIN QUICK SIDEBAR -->
+                <a href="javascript:;" class="page-quick-sidebar-toggler">
+                    <i class="icon-login"></i>
+                </a>
+                <div class="page-quick-sidebar-wrapper" data-close-on-body-click="false">
+                    <div class="page-quick-sidebar">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Users
+                                    <span class="badge badge-danger">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-target="#quick_sidebar_tab_2" data-toggle="tab"> Alerts
+                                    <span class="badge badge-success">7</span>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> More
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li>
+                                        <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
+                                            <i class="icon-bell"></i> Alerts </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
+                                            <i class="icon-info"></i> Notifications </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
+                                            <i class="icon-speech"></i> Activities </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
+                                            <i class="icon-settings"></i> Settings </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <!-- END QUICK SIDEBAR -->
+            </div>
+            <!-- END CONTAINER -->
+            <!-- BEGIN FOOTER -->
+    
+         
+            <!-- END FOOTER -->
+        </div>
+        <!-- BEGIN QUICK NAV -->
+    
+        <div class="quick-nav-overlay"></div>
+        <!-- END QUICK NAV -->
+        <!--[if lt IE 9]>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+  
+    </body>
+
+</html>

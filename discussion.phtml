@@ -1,0 +1,124 @@
+ <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="<?php echo $this->basePath() ?>/assets/apps/css/todo-2.min.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL STYLES -->
+ 
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- END HEAD -->
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">
+        
+                    <!-- BEGIN CONTENT BODY -->
+              
+                        <!-- BEGIN THEME PANEL -->
+                     
+                        <!-- END THEME PANEL -->
+                        <!-- END PAGE HEADER-->
+                         <img src="<?php echo $this->basePath() ?>/img/quest.png" alt="" style="margin-left:110px" width="928"  height="200" /> 
+                                            
+                        <div class="row">
+                            <div class="col-md-12" >
+                                <!-- BEGIN TODO SIDEBAR -->
+                        
+                                            <!-- PROJECT HEAD -->
+                                        
+                                            <!-- end PROJECT HEAD -->
+                               
+                                                <div class="row">
+                                                    <div class="col-md-1"></div>
+                                               
+                                                    <div  style=" background-color:#f4f4f9;box-shadow: 0px 0px 50px rgba(0,0,0,.3) "class="col-md-10 col-sm-11">
+                                                      
+ 
+                                                           
+                                                                                 
+                                                                        <div class="form-group">
+                                                                                   
+                                                                                                
+                                                                                             <div class="media">
+                                                                                                     <form action="addquestion" method="post">
+                                                                                                     
+                                                                                                       <p style="margin-left: 20px;background-color:#d9e6f7"class="todo-text-color"> </p>
+                                                                                                 
+                                                                                                   
+                                                                                                     <div class="media-body">
+                                                                                                         
+                                                                                                      <input type="hidden" class="form-control todo-taskbody-tasktitle" value="<?=$_GET['id_session']?>" name="id_session"  id="id_session"> </div>
+                                                                                                     
+                                                                                                      <textarea style="border:2px double rgba(11, 90, 111, 0.2)"class="form-control todo-taskbody-taskdesc" rows="3"  required name="question"  id="question"  placeholder="votre question ..."></textarea>
+                                                                                                        
+                                                                                                     <div class="form-actions right todo-form-actions">
+                                                                                                         <button type="submit" style="margin-left: 680px;background-color:rgba(11, 90, 111, 5.2)"class="btn btn-circle btn-sm green">Ajouter votre question </button>
+                                                                   
+                                                                </div>                      
+                                                                                                  
+                                                                                             
+                                                                                        </form>
+                                                                                                 <br><br>
+                                                                            <div class="col-md-12">
+                                                                                          <?php       if(count($question)>0){
+                                                                                    foreach ($question as $val) {?>
+                                                                                <ul class="media-list" style="border: outset">
+                                                                                  
+                                                                                 
+                                                                                         
+                                                                                    
+                                                                                    <li class="media">
+                                                                                        <a class="pull-left" href="javascript:;">
+                                                                                             <img class="todo-userpic" src="<?php echo $this->basePath() ?>/assets/pages/media/profile/user.png"  width="40px" height="40px"> </a>
+                                                                                                <div class="media-body todo-comment">
+                                                                                             
+                                                                                            <p class="todo-comment-head">
+                                                                                                  <?php foreach ($participant as $par) { ?>
+                                                                                                 <?php if(($val->id_participant)==($par->id)) { ?>
+                                                                                                <span style="color: #505a64;font-size: 20px"class="todo-comment-username"><?= $par->nom ?></span> &nbsp;
+                                                                                                  <?php  } }?> <br>
+                                                                                                <span class="todo-comment-date"><?= $val->date ?></span>
+                                                                                            </p>
+                                                                                            <p class="todo-text-color"><?= $val->question ?>
+                                                                                               <br> </p> </div>
+                                                                                         <form action="addrepense" method="post">
+                                                                                                
+                                                                                             <div class="media">
+                                                                                                  <?php foreach ($repense as $rep) { ?>
+                                                                                                          <?php if(($val->id)==($rep->id_question)) { ?>
+                                                                                                     
+                                                                                                       <p style="margin-left: 20px;background-color:#e7ecf0"class="todo-text-color"><img class="todo-userpic" src="<?php echo $this->basePath() ?>/assets/pages/media/profile/FORMA.png"  width="30px" height="30px">&nbsp;&nbsp;<?= $rep->repense ?><br><?= $rep->date ?> </p>
+                                                                                                 
+                                                                                                  <?php }} ?>
+                                                                                                      
+                                                                   
+                                                                </div>                      
+                                                                                                  
+                                                                                             
+                                                                                        </form>
+                                                                                               </ul> <?php } } ?>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- END TASK COMMENTS -->
+                                                                        <!-- TASK COMMENT FORM -->
+                                                                  
+                                                                        <!-- END TASK COMMENT FORM -->
+                                                                    </div>
+                                                                
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                              
+                                    <!-- END TODO CONTENT -->
+                         >
+                    <!-- END CONTENT BODY -->
+                </div>
+                <!-- END CONTENT -->
+             
+          
+                <!-- END QUICK SIDEBAR -->
+            </div>
+            <!-- END CONTAINER -->
+            <!-- BEGIN FOOTER -->
+         
+            <!-- END FOOTER -->
+        </div>
+    
+       

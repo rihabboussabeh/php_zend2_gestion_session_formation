@@ -1,0 +1,78 @@
+ 
+ 
+ 
+                  
+
+
+
+ <div class="row">
+                <div class="col-md-2"></div>
+                   <div class="col-md-8 ">
+                       <fieldset   style=" box-shadow: 0px 0px 50px rgba(0,0,0,.3); padding: 0% ;background-color:rgba(11, 90, 111, 0.05); border:2px double rgba(11, 90, 111, 0.2)"  >
+                           <form action="../../../public/application/formateur/addpresence" method="post">
+                           <div class="portlet box blue-hoki">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-list "></i> liste des présences  </div>
+                               
+                                    </div></div>
+                                 
+                             <?php foreach($session as $sess){ ?> 
+                             <?php foreach($seance as $sean){ ?> 
+                              <?php foreach($inscription as $ins){ ?> 
+                            <?php if(($ins->id_session)==($sess->idp)) {?> 
+                           
+                               <?php foreach($participant as $par){ ?>  
+                           
+                           <?php if(($ins->id_participant)==($par->id)) {?> 
+                           <div class="col-md-7" style="font-size:18px ;color: #003366 "> <b> <?= $par->nom ?> <?= $par->prenom ?> </b> </div>
+                                       
+                                   <div class="md-radio-inline"  >
+                                        <?php   $actif = false;?> 
+                                                            <div class="md-radio">
+                                                                
+                                                                <input type="radio" id="et<?= $par->id ?>"   <?php foreach($presence as $pres){ ?>  <?php if(($pres->id_participant)==($par->id)&&($pres->id_seance)==($sean->id)) {?>   <?php   if(($pres->etat)=="present") { ?> checked   <?php $actif = true;}} ?> <?php } ?> name="etat<?= $par->id ?>" value="present" class="md-radiobtn">
+                                                                <label for="et<?= $par->id ?>">
+                                                                    <span></span>
+                                                                    <span class="check"></span>
+                                                                    <span class="box"></span> Present </label>
+                                                            </div>
+                                                            <div class="md-radio ">
+                                                                <input type="radio" id="etat<?= $par->id ?>"   <?php foreach($presence as $pres){ ?>  <?php if(($pres->id_participant)==($par->id)&&($pres->id_seance)==($sean->id)) {?>   <?php   if(($pres->etat)=="absent") { ?> checked   <?php $actif = true; }} ?> <?php } ?>  name="etat<?= $par->id ?>"  value="absent"  class="md-radiobtn" >
+                                                                <label for="etat<?= $par->id ?>">
+                                                                    <span></span>
+                                                                    <span class="check"></span>
+                                                                    <span class="box"></span> absent </label>
+                                                            </div>
+                                                            
+                                                        </div>
+                           <input type="hidden" id="id_seance" name="id_seance" value="<?= $sean->id ?>" >
+                           <input type="hidden" id="id_participant" name="id_participant" value="<?= $par->id ?>" >
+                         
+                           
+                           <br><br>
+                           
+                           
+                           
+           <?php }?>   <?php }?>   <?php }?>  <?php }?>   <?php }?>   <?php }?> 
+                           <input type="hidden" id="id_session" name="id_session" value="<?= $sess->idp ?>" >
+                          <?php   if($actif==true) {?>
+                           <br> <br>  <br>   
+                            <?php } else {?>  
+                             
+                           <br> <br>  <br>   <div   class="form-actions">
+                               <button type="submit" id="register-submit-btn" style="background-color:#385b7e; width:200px;height: 50px;margin-left: 250px ;margin-bottom: 30px"class="btn green " onclick="save()"> Enregister  </button>
+                </div>  
+                            <?php }?>
+                           
+                           
+                           </form> </fieldset ></div></div>
+
+
+
+
+ 
+ 
+<!-- Footer Start -->
+ 
+             

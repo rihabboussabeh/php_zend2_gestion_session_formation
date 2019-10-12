@@ -1,0 +1,135 @@
+
+                        <h1 class="page-title"> 
+                            
+                        </h1>
+                        <!-- END PAGE TITLE-->
+                        <!-- END PAGE HEADER-->
+                        <div class="profile">
+                            <div class="tabbable-line tabbable-full-width">
+                                <ul class="nav nav-tabs">
+                                   
+                                    <b style="margin-left:320px;font-size: 40px">Reçu </b>
+                                   
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab_1_1">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                      
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="tab-content">
+                                                    <div id="tab_1" class="tab-pane active">
+                                                        
+                                                        <div id="accordion1" class="panel-group" style="  box-shadow: 0px 0px 50px rgba(0,0,0,.3)">
+                                                          
+                                                           
+                                                          
+                                                            
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading" >
+                                                                    <div class="row">
+                                                       <div class="col-md-10"><h4 class="panel-title">
+                                                               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_1">  <b><?=$nomcentre?></b><br><br><i class="fa fa-map-marker"></i>&nbsp<?=$adresscentre?><br><i class="fa fa-map-marker"></i>&nbsp;<?=$villecentre?>  </a>
+                                                                   </h4></div>
+                                                                        
+                                                           <?php foreach ($session as $session) { ?>
+                                                          <input style="margin-left: 790px" onclick='window.print()' type='button' id='button-imprimer' value='<?=$session->langage?>'  />
+                                                             <?php } ?>
+                                                                       </div>
+                                                                    </div>  
+                                                                    
+                                                                       
+                                                                </div>
+                                                                
+                                                                
+                                            <table  class="table table-hover table-light"  style=" width:800px;height: 100px" >
+                                                             
+                                                <thead>
+                                              
+                                                </thead>
+                                                <tbody>
+                                                    
+                                               
+                                                    <tr>
+                                                     
+                                                        <td> Nom  </td>
+                                                        <td> <?= $nomparticipant?> </td>    
+                                                   
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                     
+                                                        <td> Prénom  </td>
+                                                        <td> <?= $prenomparticipant?></td>    
+                                                   
+                                                    </tr>
+                                                      <tr>
+                                                     
+                                                        <td> Montant  </td>
+                                                        <td>  <?= $montant?> dt </td>    
+                                                   
+                                                    </tr>
+                                                      <tr>
+                                                     
+                                                        <td> date  </td>
+                                                        <td>  <?= $date ?></td>    
+                                                   
+                                                    </tr>
+                                                            
+                                                </tbody>
+                                            </table>
+                                                              </div>
+                                                    
+                                                     
+                                                            
+                                                            
+                                                          
+                                                        </div>
+                                                    </div>
+                                                   
+                                                             
+                                                          
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--tab_1_2-->
+                           
+                                    <!--end tab-pane-->
+                               
+                                    <!--end tab-pane-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END CONTENT BODY -->
+                </div>
+                <!-- END CONTENT -->
+                <!-- BEGIN QUICK SIDEBAR -->
+           
+                
+                <!-- END QUICK SIDEBAR -->
+            </div>
+            <!-- END CONTAINER -->
+           
+            <!-- END FOOTER -->
+        </div>
+        <!-- BEGIN QUICK NAV -->
+ 
+        <div class="quick-nav-overlay"></div>
+        <!-- END QUICK NAV -->
+        <!--[if lt IE 9]>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/respond.min.js"></script>
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/excanvas.min.js"></script> 
+<script src="<?php echo $this->basePath() ?>/assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+ 
+        <?php $this->headScript()
+            ->prependFile($this->basePath('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js'))
+            ?>
+        
+        

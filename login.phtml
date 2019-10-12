@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.1
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Metronic Admin Theme #1 | User Login 4</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="Preview page of Metronic Admin Theme #1 for " name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+       
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="favicon.ico" />
+    <script>
+var k =0;
+var v=new Array();
+v[0]=new Image(); v[0].src="<?php echo $this->basePath() ?>/assets/pages/img/infoo.jpg" ;
+v[1]=new Image(); v[1].src="<?php echo $this->basePath() ?>/assets/pages/img/info.jpg";
+v[2]=new Image(); v[2].src="<?php echo $this->basePath() ?>/assets/pages/img/infooo.jpg " ;
+v[3]=new Image(); v[3].src="<?php echo $this->basePath() ?>/assets/pages/img/infoooo.jpg " ;
+
+function changer()
+{
+if(k==0) k=1;
+else if(k==1) k=2;
+else if(k==2) k=3;
+else if(k==3) k=0;
+
+  
+  document.images.photo.src=v[k].src;
+}
+</script>
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+						   
+	// This initialises carousels on the container elements specified, in this case, carousel1.
+	$("#carousel1").CloudCarousel(		
+		{			
+			reflHeight: 40,
+			reflGap:2,
+			titleBox: $('#da-vinci-title'),
+			altBox: $('#da-vinci-alt'),
+			buttonLeft: $('#slider-left-but'),
+			buttonRight: $('#slider-right-but'),
+			yRadius:30,
+			xPos: 450,
+			yPos: 32,
+			speed:0.15,
+		}
+	);
+});
+ 
+</script></head>
+    <!-- END HEAD -->
+
+    <body class=" login">
+        <!-- BEGIN LOGO -->
+      
+        <!-- END LOGO -->
+        <!-- BEGIN LOGIN -->
+        <div class="content"style="  box-shadow: 0px 0px 50px rgba(0,0,0,.1) ">
+            <!-- BEGIN LOGIN FORM -->
+          
+            
+            <br> <br> 
+            <div class="row">
+               
+                   <div class="col-md-8 ">
+                         <div class="row"> <div class="col-md-8 " ><div   class="pattern_bg" ><img id=photo src="<?php echo $this->basePath() ?>/assets/pages/img/infoo.jpg" width="820" style="border:3px outset ; box-shadow: 0px 0px 50px rgba(0,0,0,.3) "  height="360" /></div> 
+                 <script>setInterval('changer()',3000);</script></div></div> 
+                </div>
+                
+                <div class="col-xs-4 portlets"  >  
+                    <div class="row" style=" box-shadow: 0px 0px 50px rgba(0,0,0,.7);margin-right: 30px  "> 
+                       <fieldset   style="padding: 5% ;background-color:#1b2739;  "  >
+                       <form class="login-form" action="index.html" method="post">
+                           <h2 class="form-title"style="color: #d3deee"><i class="fa fa-sign-in"></i>      Login </h2>
+                <div class="alert alert-danger display-hide">
+                    <button class="close" data-close="alert"></button>
+                    <span> Enter any username and password. </span>
+                </div> <br>
+                <div class="tabbable-line tabbable-full-width">
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#tab_1_1" data-toggle="tab" style="font-size: 12px;color: #d3deee"> Centre de formation</a>
+                                    </li>
+                                     <li>
+                                        <a href="#tab_1_2" data-toggle="tab" style="font-size: 12px;color: #d3deee"> formateur </a>
+                                    </li>
+                                     <li>
+                                        <a href="#tab_1_3" data-toggle="tab" style="font-size: 12px;color: #d3deee"> Participant </a>
+                                    </li>
+                                   
+                                </ul>
+                                <div class="tab-content">
+                                      <div class="tab-pane active" id="tab_1_1">
+                    <form class="login-form" action="index.html" method="post">
+         
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                 
+                    <div class="input-icon">
+                        <i class="fa fa-user"style="color:#1b2739 "></i>
+                        <input style="background-color:#c7d7ef ;border: inset "  class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username centre" name="username" id="login"/> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">Password</label>
+                    <div class="input-icon">
+                        <i class="fa fa-lock"style="color:#1b2739"></i>
+                        <input   style="background-color:#c7d7ef ;border: inset "  class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" id="password" /> </div>
+                </div>
+                <div class="form-actions">
+                 
+                    <button type="button" onclick="dologina()"  style="background-color:#213553;border: 1px outset "  class="btn green pull-right"> Login centre </button>
+                </div>
+                  <div class="create-account">
+                    <p>
+                        <a href="<?php echo $this->basePath() ?>/application/index/inscriptioncentre" id="register-btn" class="uppercase"style="color: #d3deee">Inscription </a>
+                    </p>
+                </div>    
+                     
+                       </form>
+                                    </div>
+                                 
+                                    <!--tab_1_2-->
+                           <div class="tab-pane" id="tab_1_2">
+                    <form class="login-form" action="index.html" method="post">
+         
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                 
+                    <div class="input-icon">
+                        <i class="fa fa-user"style="color:#1b2739 "></i>
+                        <input style="background-color:#c7d7ef ;border: inset "  class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username formateur" name="username" id="loginf"/> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">Password</label>
+                    <div class="input-icon">
+                        <i class="fa fa-lock"style="color:#1b2739 "></i>
+                        <input style="background-color:#c7d7ef ;border: inset "  class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" id="passwordf" /> </div>
+                </div>
+                <div class="form-actions">
+                 
+                    <button type="button" onclick="dologin()"   style="background-color:#213553;border: 1px outset "  class="btn green pull-right"> Login formateur</button>
+                </div>
+                         <div class="create-account">
+                    <p>
+                        <a href="<?php echo $this->basePath() ?>/application/index/inscriptionformateur" id="register-btn" class="uppercase"style="color: #d3deee">Inscription </a>
+                    </p>
+                </div>           
+                     
+                       </form>
+                                    </div>
+                                    <!--end tab-pane-->
+                            <div class="tab-pane" id="tab_1_3">
+                    <form class="login-form" action="index.html" method="post">
+         
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                 
+                    <div class="input-icon">
+                        <i class="fa fa-user"style="color:#1b2739 "></i>
+                        <input  style="background-color:#c7d7ef ;border: inset "  class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username participant" name="username" id="loginp"/> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">Password</label>
+                    <div class="input-icon">
+                        <i class="fa fa-lock"style="color:#1b2739 "></i>
+                        <input  style="background-color:#c7d7ef ;border: inset "   class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" id="passwordp" /> </div>
+                
+                </div>
+                       
+                    
+               
+                <div class="form-actions">
+                
+                    <button type="button"   style="background-color:#213553;border: 1px outset " onclick="dologinp()"  class="btn green pull-right"> Login participant </button>
+              
+                </div> 
+                         <div class="create-account">
+                    <p>
+                        <a href="<?php echo $this->basePath() ?>/application/index/inscriptionparticipant" id="register-btn" class="uppercase"style="color: #d3deee">Inscription </a>
+                    </p>
+                </div>      
+                     
+                       </form>
+                                    </div>
+                                    <!--end tab-pane-->
+                                </div>
+              
+                              
+                     
+                       </form>
+</fieldset >  </div><br><br>
+</div>
+            <br> <br> 
+            
+           
+            </div>
+               
+                
+                
+    <?php $this->headScript()
+          
+          ->prependFile($this->basePath('/js/loginforma.js')) 
+       ->prependFile($this->basePath('/js/logincentrea.js')) 
+          ->prependFile($this->basePath('/js/loginpar.js')) 
+         ?>
+
+              
+                            </div>
